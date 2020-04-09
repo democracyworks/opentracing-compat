@@ -1,4 +1,7 @@
 steps:
-- label: "Test"
-  commands:
-  - lein test
+- label: Test
+  command: lein test
+  plugins:
+    - docker#v3.5.0:
+        image: clojure:lein
+        always-pull: true
